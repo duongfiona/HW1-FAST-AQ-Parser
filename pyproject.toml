@@ -12,7 +12,7 @@ pythonpath = [
 
 [project]
 name = "seqparser"
-authors = [{name = "Han Chen", email = "han.chen@ucsf.edu"}]
+authors = [{name = "Han Chen", email = "han.chen@ucsf.edu"}, {name = "Fiona Duong", email = "fiona.duong2@ucsf.edu}]
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
