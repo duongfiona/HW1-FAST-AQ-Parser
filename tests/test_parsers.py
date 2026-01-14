@@ -31,7 +31,7 @@ def test_FastaParser():
 
     Some example of "good" test cases might be handling edge cases, like Fasta
     files that are blank or corrupted in some way. Two example Fasta files are
-    provided in /tests/bad.fa and /tests/empty.fa
+    provided in /tests/bad.fa and /tests/blank.fa
     """
     # testing that example Fasta is properly read
     ex_file = "data/test.fa"
@@ -41,9 +41,9 @@ def test_FastaParser():
     assert all(isinstance(seq, tuple) and len(seq)==2 for seq in sequences)
 
     # testing parser with empty fasta file
-    empty_parser = FastaParser("tests/empty.fa")
-    empty_sequences = list(empty_parser)
-    assert len(empty_sequences) == 0
+    blank_parser = FastaParser("tests/blank.fa")
+    blank_sequences = list(blank_parser)
+    assert len(blank_sequences) == 0
 
     # testing parser with bad fasta file
     with pytest.raises(ValueError):
