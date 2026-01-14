@@ -34,7 +34,7 @@ def test_FastaParser():
     provided in /tests/bad.fa and /tests/empty.fa
     """
     # testing that example Fasta is properly read
-    ex_file = "../data/test.fa"
+    ex_file = "data/test.fa"
     parser = FastaParser(ex_file)
     sequences = list(parser)
     assert len(sequences) > 0
@@ -57,7 +57,7 @@ def test_FastaFormat():
     read, the first item is None
     """
     # testing that fasta files is being read in
-    ex_file = "../data/test.fa"
+    ex_file = "data/test.fa"
     parser = FastaParser(ex_file)
     sequences = list(parser)
     
@@ -70,7 +70,7 @@ def test_FastqParser():
     in the example Fastq File.
     """
     # testing that example Fastq is properly read
-    ex_file = "../data/test.fq"
+    ex_file = "data/test.fq"
     parser = FastqParser(ex_file)
     sequences = list(parser)
 
@@ -83,7 +83,7 @@ def test_FastqFormat():
     first line is None
     """
     # testing that fastq file is being read in
-    ex_file = "../data/test.fq"
+    ex_file = "data/test.fq"
     parser = FastqParser(ex_file)
     sequences = list(parser)
 
