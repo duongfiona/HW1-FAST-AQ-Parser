@@ -10,11 +10,11 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     Write a function that will transcribe (replace DNA sequence to RNA
     by replacing all 'T' to 'U') in an input sequence
     """
-    # raising ValueError if input seq contains anything besides A, C, T, G
+    # raise ValueError if input seq contains anything besides A, C, T, G
     if not all(base in ALLOWED_NUC for base in seq):
         raise ValueError("Input sequence string contains invalid nucleotides")
 
-    # iteratively transcribing input seq using TRANSCRIPTION_MAPPING dict
+    # iteratively transcribe input seq using TRANSCRIPTION_MAPPING dict
     transcript = ""
     for base in seq:
         transcript += TRANSCRIPTION_MAPPING[base]
