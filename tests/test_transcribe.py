@@ -48,4 +48,4 @@ def test_reverse_transcribe():
 
     with pytest.raises(ValueError):
         bad_seq = "ABCDE"
-        transcribe(bad_seq)
+        reverse_transcribe(bad_seq)
