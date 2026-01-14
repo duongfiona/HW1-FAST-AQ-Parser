@@ -40,12 +40,12 @@ def test_FastaParser():
     assert len(sequences) > 0
     assert all(isinstance(seq, tuple) and len(seq)==2 for seq in sequences)
 
-    # testing parser with empty fasta file
-    blank_parser = FastaParser("tests/blank.fa")
-    blank_sequences = list(blank_parser)
-    assert len(blank_sequences) == 0
+    # testing that parser throws ValueError with blank fasta file
+    with pytest.raises(ValueError):
+        blank_parser = FastaParser("tests/blank.fa")
+        list(blank_parser)
 
-    # testing parser with bad fasta file
+    # testing that parser throws ValueError with bad fasta file
     with pytest.raises(ValueError):
         bad_parser = FastaParser("tests/bad.fa")
         list(bad_parser)
