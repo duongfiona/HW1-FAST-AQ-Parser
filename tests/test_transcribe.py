@@ -4,6 +4,8 @@ from seqparser import (
         transcribe,
         reverse_transcribe)
 
+import pytest
+
 
 def test_freebie_transcribe_1():
     """
@@ -30,6 +32,10 @@ def test_transcribe():
 
     assert transcribe(test_seq) == correct_output
 
+    with pytest.raises(ValueError):
+        bad_seq = "ABCDE"
+        transcribe(bad_seq)
+
 
 def test_reverse_transcribe():
     """
@@ -39,3 +45,7 @@ def test_reverse_transcribe():
     correct_output = "GGGUUCAGU"
 
     assert reverse_transcribe(test_seq) == correct_output
+
+    with pytest.raises(ValueError):
+        bad_seq = "ABCDE"
+        transcribe(bad_seq)
